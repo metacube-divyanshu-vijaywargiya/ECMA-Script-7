@@ -1,0 +1,112 @@
+#employee-registration{
+    height: fit-content;
+    border-radius: 10px;
+    margin: auto;
+    width: 80%;
+    padding: 50px;
+    border-radius: 0.5em;
+    color: rgb(0, 85, 242);
+    border: 1px solid #a1cbfb;
+    box-shadow: inset 0 0 15px rgba(189, 216, 248, 0.575);
+    background: rgba(14, 116, 225, 0.126);
+    backdrop-filter: blur(1em);
+}
+#vehicle-registration{
+    height: fit-content;
+    border-radius: 10px;
+    margin: auto;
+    width: 80%;
+    padding: 50px;
+    border-radius: 0.5em;
+    color: rgb(0, 85, 242);
+    border: 1px solid #a1cbfb;
+    background: rgba(14, 116, 225, 0.126);
+    box-shadow: inset 0 0 15px rgba(189, 216, 248, 0.575);
+    backdrop-filter: blur(1em);
+    margin-bottom: 50px;
+}
+
+body{
+    font-family: "Times New Roman", Times, serif;
+}
+
+#registration-id{
+    width: 100vw;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.button_dropdown{
+    display: flex;
+    justify-content: space-between;
+    /* padding-right: 100px; */
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+
+/*  */
+.ticket {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    h2 {
+        color: #555;
+    }
+
+    .employee-info, .vehicle-info {
+        margin-bottom: 20px;
+    }
+
+    .plan-info {
+        background: #e7f3fe;
+        border: 1px solid #b3d7ff;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+  
+.label{
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.infoTicket{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 
+ */
+ @media print {
+    body * {
+        visibility: hidden; 
+        
+    }
+    #ticketsection, #ticketsection * {
+        visibility: visible; 
+    }
+    #ticketsection {
+        width: 800px;
+        display: block;
+        position: absolute; 
+        page-break-after: auto;
+        left: 0;
+        top: 0;
+    }
+}

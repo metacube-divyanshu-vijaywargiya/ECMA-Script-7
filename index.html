@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="text-center mt-4 ">Metacube Parking System</h1>
+
+    <div id="registration-id" class="d-none mt-3"></div>
+
+    <div id="employee-registration" class="mt-3">
+        <h2>Employee Registration</h2>
+        <div id="form-container">
+            <input type="text" id="fullName" class="form-control" placeholder="Enter your name" autofocus/>
+        </div>
+        <div id="gender-container" class="d-none">
+            <p id="gender-label" class="label"></p>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+        <div id="email-container" class="d-none">
+            <p id="email-label" class="label"></p>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" autofocus/>
+        </div>
+        <div id="password-container" class="d-none">
+            <p id="password-label" class="label"></p>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password" autofocus/>
+            <p id="confirm-password-label" class="label"></p>
+            <input type="password" id="confirmPassword" class="form-control " placeholder="Confirm your password" autofocus/>
+        </div>
+        <div id="contact-container" class="d-none">
+            <p id="contact-label" class="label"></p>
+            <input type="text" id="contact" class="form-control" placeholder="Enter your contact number" autofocus/>
+        </div>
+        <p id="register-label"></p>
+        <button id="register-button" class="d-none btn btn-primary ps-2 pe-2">Register</button>
+    </div>
+    
+    
+    
+    <div id="vehicle-registration" class="d-none mt-3">
+        <h2>Vehicle Registration</h2>
+        <div id="vehicle-form-container">
+            <p id="vehicleName-label" class="label"></p>
+            <input type="text" id="vehicleName" class="form-control" placeholder="Enter vehicle name" autofocus/>
+        </div>
+        <div id="vehicle-type-container" class="d-none">
+            <label for="vehicleType"  class="label">Which vehicle do you have?</label>
+            <select id="vehicleType" class="form-select">
+                <option value="" selected disabled>Select Vehicle Type</option>
+                <option value="Cycle">Cycle</option>
+                <option value="MotorCycle">MotorCycle</option>
+                <option value="FourWheeler">Four Wheeler</option>
+            </select>
+        </div>
+        <div id="vehicle-number-container" class="d-none">
+            <p id="vehicleNumber-label" class="label"></p>
+            <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter vehicle number" autofocus/>
+        </div>
+        <div id="employee-id-container" class="d-none">
+            <p id="employeeId-label" class="label"></p>
+            <input type="text" id="employeeId" class="form-control" placeholder="Enter employee ID" autofocus/>
+        </div>
+        <div id="identification-container" class="d-none">
+            <p id="identification-label" class="label"></p>
+            <textarea id="identification" class="form-control" placeholder="Enter Indentification" autofocus></textarea>
+        </div>
+        <div id="pass-pricing" class="d-none">
+            <h3>Pass Pricing</h3>
+            <div id="pricing"></div>
+            <div class="button_dropdown">
+                <select id="currency" class="form-select w-50">
+                    <option value="" selected disabled>Choose currency</option>
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="YEN">YEN</option>
+                </select>
+                <button id="get-pass" class="btn btn-success w-25">Get Pass</button>
+            </div>
+        </div>       
+        <div id="pass-price" class="d-none mt-4"></div>
+        <div id="ticket_and_plans" class="d-none">
+            <div class="button_dropdown" style="border-bottom: 1px dashed; padding-bottom: 25px;">
+                <select name="planSelection" id="planSelectionDropdown" class="form-select w-50">
+                    <option value="" selected disabled>Select plan</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Yearly">Yearly</option>
+                </select>
+                
+                <button id="generate_ticket" class="btn btn-warning w-20 me-5">Generate ticket</button>
+                <button id="print" class="btn btn-warning w-20 d-none">Print ticket</button>
+            </div>
+
+            <div id="ticketsection" class="mt-4 ticket d-none">
+                <h3 class="text-center"><strong class="text-black">Vehicle Pass Ticket</strong></h1>
+                <div class="infoTicket">
+                    <div class="employee-info">
+                        <h4 class="text-black">Employee Information</h4>
+                        <p><strong class="text-black">Employee ID:</strong> <span id="employeeIdTicket"></span></p>
+                        <p><strong class="text-black">Name:</strong> <span id="employeeName"></span></p>
+                        <p><strong class="text-black">Email:</strong> <span id="employeeEmail"></span></p>
+                        <p><strong class="text-black">Phone Number:</strong> <span id="employeeNumber"></span></p>
+                    </div>
+                    <div class="vehicle-info">
+                        <h4 class="text-black">Vehicle Information</h4>
+                        <p><strong class="text-black">Vehicle Type:</strong> <span id="vehicleTypeDisplay"></span></p>
+                        <p><strong class="text-black">Vehicle Name:</strong> <span id="vehicleNameDisplay"></span></p>
+                        <p><strong class="text-black">Vehicle Number:</strong> <span id="vehicleNumberDisplay"></span></p>
+                    </div>
+                </div>
+                <div class="plan-info" >
+                    <p><strong class="text-black">Selected Plan:</strong> <span id="selectedPlan"></span></p>
+                    <p><strong class="text-black">Plan Pricing:</strong> <span id="selectedPlanPricing"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jsfile.js"></script>
+    
+</body>
+</html>
+
